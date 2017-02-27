@@ -26,9 +26,11 @@ class Environment {
     'none' => 'Unknown',
     'local' => 'Localhost',
     'dev' => 'Development',
+    'development' => 'Development',
     'stage' => 'Staging',
     'staging' => 'Staging',
     'prod' => 'Production',
+    'production' => 'Production',
   ];
 
   /**
