@@ -1,0 +1,6 @@
+{
+    "name": "shomeya/shomeya_utility",
+    "description": "Shomeya utility tools",
+    "type": "drupal-module",
+    "license": "GPL 2.0+"
+}

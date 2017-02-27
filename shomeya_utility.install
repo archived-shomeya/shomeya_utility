@@ -1,0 +1,48 @@
+<?php
+
+use Drupal\shomeya_utility\BuildMetadata;
+
+/**
+ * Implements hook_requirements().
+ */
+function shomeya_utility_requirements($phase) {
+  $requirements = array();
+
+  // Report Drupal version
+  if ($phase == 'runtime') {
+    $translation = \Drupal::translation();
+
+    $commit_args = array(
+      ':url' => BuildMetadata::getCommitUrl(),
+      '@sha' => BuildMetadata::getCommitSha(),
+      '%message' => BuildMetadata::getCommitMessage(),
+      '%date' => BuildMetadata::getCommitDate(),
+      '%author' => BuildMetadata::getCommitAuthor(),
+    );
+
+    $requirements['shomeya_admin_tools_commit'] = array(
+      'title' => $translation->translate('Commit info'),
+      'value' => $translation->translate('<a href=":url">@sha</a> - %message by %author on %date', $commit_args),
+      'severity' => REQUIREMENT_INFO,
+    );
+
+    if (BuildMetadata::isBuild()) {
+      $build_args = array(
+        '%build_user' => BuildMetadata::getBuildUser(),
+        '%build_date' => BuildMetadata::getBuildDate(),
+        '%build_host' => BuildMetadata::getBuildHost(),
+        '%build_branch' => BuildMetadata::getBuildBranch(),
+        '%build_commit' => BuildMetadata::getBuildCommitSha(),
+      );
+
+      $requirements['shomeya_admin_tools_build'] = array(
+        'title' => $translation->translate('Build info'),
+        'value' => $translation->translate("Built at %build_date on %build_host from %build_branch on %build_commit by %build_user", $build_args),
+        'severity' => REQUIREMENT_INFO,
+      );
+    }
+
+  }
+
+  return $requirements;
+}

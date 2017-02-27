@@ -1,0 +1,183 @@
+/**
+ * @file
+ * Styling for shomeya_utility toolbar.
+ */
+
+/* Tab appearance. */
+.toolbar .toolbar-bar .shomeya-utility-toolbar-tab.toolbar-tab {
+  float: right; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-bar .shomeya-utility-toolbar-tab.toolbar-tab {
+  float: left;
+}
+
+.toolbar .toolbar-menu .shomeya-utility-toolbar-text {
+  padding: 1em 1.3333em;
+  color: black;
+}
+
+.toolbar .toolbar-menu .shomeya-utility-toolbar-text a {
+  display: inline;
+  padding: 0;
+}
+
+.toolbar .toolbar-menu .shomeya-utility-toolbar-commit-data {
+  float: right;
+}
+
+/* ------------- styleguide ------------------- */
+
+.row, .content-row {
+  display: block;
+  margin: 20px;
+  height: 100%;
+  clear: both;
+}
+
+.row::after, .content-row::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+.column {
+
+}
+
+.column header, .column ul, .column .content {
+  padding: 10px;
+}
+
+.full {
+  display: block;
+  width: 100%;
+}
+
+.half {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+
+.details {
+  width: 100%;
+  border-left: 5px solid #999;
+  background: #f7f7f7;
+}
+
+.half.details {
+  width: calc(50% - 5px);
+  font-family: 'Inconsolata', 'Andale Mono', 'Lucida Console', Monaco, 'Courier New', Courier, monospace;
+}
+
+.half.details ul {
+  list-style: none;
+}
+
+.swatch {
+  list-style:none;
+  display: block;
+  float: left;
+}
+
+.info {
+  text-align: center;
+}
+.color {
+  width:100px;
+  height: 100px;
+  margin: 0 20px 10px 20px;
+  border-radius: 50%;
+}
+
+.crimson {
+  background: #d63700;
+}
+
+.red {
+  background: #ff5c36;
+}
+
+.pink {
+  background: #ffa091;
+}
+
+.blue {
+  background: #3880ff;
+}
+
+.azurez {
+  background: #59a1f7;
+}
+
+.sky {
+  background: #91b2ff;
+}
+
+.forest {
+  background: #139680;
+}
+
+.green {
+  background: #00d87b;
+}
+
+.seafoam {
+  background: #59e2b7;
+}
+
+.amber {
+  background: #ffae1a;
+}
+
+.yellow {
+  background: #ffd86e;
+}
+
+.black {
+  background: #000000;
+}
+
+.very-dark-gray {
+  background: #2e2e2e;
+}
+
+.dark-gray {
+  background: #4e4e4e;
+}
+
+.gray {
+  background: #dedede;
+}
+
+.white {
+  background: #FFFFFF;
+  border: 1px solid #dedede;
+}
+
+table {
+  text-align: left;
+}
+
+h1 {
+  font-size: 3.2em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 34px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 20px;
+}

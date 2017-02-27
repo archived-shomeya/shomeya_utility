@@ -1,0 +1,7 @@
+services:
+  shomeya_utility.twig_extension:
+    class: Drupal\shomeya_utility\TwigExtension\UtilityTwigFunctions
+    tags:
+      - { name: twig.extension }
+    calls:
+      - [setDateFormatter, ['@date.formatter']]

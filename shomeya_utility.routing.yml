@@ -1,0 +1,21 @@
+shomeya_utility.style_guide.web:
+  path: '/styleguide/web'
+  defaults:
+    _title: 'Web Style Guide'
+    _controller: 'Drupal\shomeya_utility\Controller\StyleGuideController::htmlContent'
+  requirements:
+    _access: 'TRUE'
+shomeya_utility.style_guide.form:
+  path: '/styleguide/drupal/form'
+  defaults:
+    _title: 'Form Style Guide'
+    _controller: 'Drupal\shomeya_utility\Controller\StyleGuideController::formContent'
+  requirements:
+    _access: 'TRUE'
+shomeya_utility.style_guide.elements:
+  path: '/styleguide/drupal/elements'
+  defaults:
+    _title: 'Element Style Guide'
+    _controller: 'Drupal\shomeya_utility\Controller\StyleGuideController::renderElementContent'
+  requirements:
+    _access: 'TRUE'

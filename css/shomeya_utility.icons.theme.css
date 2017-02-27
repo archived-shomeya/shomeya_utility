@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Styling for the shomeya_utility module icons.
+ */
+
+/**
+ * Toolbar tab icon.
+ */
+.toolbar-bar .toolbar-icon-environment:before {
+  background-image: url(../assets/icons/bebebe/check.svg);
+}
+.toolbar-bar .toolbar-icon-environment:active:before,
+.toolbar-bar .toolbar-icon-environment.is-active:before {
+  background-image: url(../assets/icons/ffffff/check.svg);
+}
+
+/**
+ * OK version
+ */
+.toolbar-bar .shomeya-utility-ok.toolbar-icon-environment:before {
+  background-image: url(../assets/icons/00cc33/check.svg);
+}
+
+.toolbar-bar .shomeya-utility-ok.toolbar-icon-environment:active:before,
+.toolbar-bar .shomeya-utility-ok.toolbar-icon-environment.is-active:before {
+  background-image: url(../assets/icons/ffffff/check.svg);
+}
+
+/**
+ * Error version
+ */
+.toolbar-bar .shomeya-utility-error.toolbar-icon-environment:before {
+  background-image: url(../assets/icons/ef0229/ex.svg);
+}
+
+.toolbar-bar .shomeya-utility-error.toolbar-icon-environment:active:before,
+.toolbar-bar .shomeya-utility-error.toolbar-icon-environment.is-active:before {
+  background-image: url(../assets/icons/ffffff/ex.svg);
+}
+
+/**
+ * Warn version
+ */
+.toolbar-bar .shomeya-utility-warn.toolbar-icon-environment:before {
+  background-image: url(../assets/icons/bebebe/warn.svg);
+}
+
+.toolbar-bar .shomeya-utility-warn.toolbar-icon-environment:active:before,
+.toolbar-bar .shomeya-utility-warn.toolbar-icon-environment.is-active:before {
+  background-image: url(../assets/icons/ffffff/warn.svg);
+}

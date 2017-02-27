@@ -1,0 +1,16 @@
+shomeya_utility.style_guide.web:
+  route_name: shomeya_utility.style_guide.web
+  base_route: shomeya_utility.style_guide.web
+  title: 'Web'
+shomeya_utility.style_guide.drupal:
+  route_name: shomeya_utility.style_guide.form
+  base_route: shomeya_utility.style_guide.web
+  title: 'Drupal'
+shomeya_utility.style_guide.form_sub:
+  route_name: shomeya_utility.style_guide.form
+  parent_id: shomeya_utility.style_guide.drupal
+  title: 'Forms'
+shomeya_utility.style_guide.elements.sub:
+  route_name: shomeya_utility.style_guide.elements
+  parent_id: shomeya_utility.style_guide.drupal
+  title: 'Elements'

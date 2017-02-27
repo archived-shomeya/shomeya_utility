@@ -1,0 +1,9 @@
+# Schema for the configuration files of the shomeya_utility module.
+
+shomeya_utility.settings:
+  type: mapping
+  label: 'Shomeya Utility settings'
+  mapping:
+    github_url:
+      type: string
+      label: 'Github Base Link URL'

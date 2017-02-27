@@ -1,0 +1,5 @@
+name: Shomeya Utility
+description: Shomeya utility tools
+package: "Shomeya"
+type: module
+core: 8.x

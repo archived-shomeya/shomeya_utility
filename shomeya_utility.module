@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * Generic functionality for Shomeya websites.
+ */
+
+use Drupal\Core\Url;
+use Drupal\shomeya_utility\Environment;
+use Drupal\shomeya_utility\BuildMetadata;
+use Drupal\Core\Render\Element;
+
+function shomeya_utility_theme() {
+  return array(
+    'styleguide' => array(
+      'render element' => 'elements',
+    ),
+  );
+
+}
+
+/**
+ * Implements hook_toolbar().
+ */
+function shomeya_utility_toolbar() {
+  $items = [];
+
+  $translation = \Drupal::translation();
+
+  $commit_args = array(
+    ':branch_url' => BuildMetadata::getBranchUrl(),
+    '@branch' => BuildMetadata::getBuildBranch(),
+    '@sha' => BuildMetadata::getCommitSha(),
+    '@message' => BuildMetadata::getCommitMessage(),
+    '@sha' => BuildMetadata::getCommitSha(),
+    ':commit_url' => BuildMetadata::getCommitUrl(),
+  );
+
+  $commit_info = $translation->translate('On <a href=":branch_url" target="_blank">@branch</a> &ndash; @message &ndash; <a href=":commit_url" target="_blank">@sha</a>', $commit_args);
+
+  if (BuildMetadata::isBuild()) {
+    $build_args = array(
+      '@build_user' => BuildMetadata::getBuildUser(),
+      '@build_date' => BuildMetadata::getBuildDate(),
+      '@build_host' => BuildMetadata::getBuildHost(),
+      '@build_branch' => BuildMetadata::getBuildBranch(),
+      '@build_commit' => BuildMetadata::getBuildCommitSha(),
+    );
+
+    $build_info =  $translation->translate("Built/deployed at @build_date", $build_args);
+  }
+  else {
+    $build_info = '';
+  }
+
+  // The 'Home' tab is a simple link, which is wrapped in markup associated
+  // with a visual tab styling.
+  $items['status'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => $translation->translate('@env (@branch)', ['@env' => Environment::getLabel(), '@branch' => BuildMetadata::getBuildBranch()]),
+      '#url' => Url::fromRoute('system.status'),
+      '#attributes' => [
+        'title' => $translation->translate('Go to status report'),
+        'class' => ['toolbar-icon', 'toolbar-icon-environment', Environment::getStatusClass()],
+      ],
+      '#cache' => [
+        'contexts' => [
+          'url.site',
+        ],
+      ],
+    ],
+    '#wrapper_attributes' => [
+      'class' => ['shomeya-utility-toolbar-tab'],
+    ],
+    '#attached' => [
+      'library' => [
+        'shomeya_utility/drupal.shomeya_utility.environment_icons',
+        'shomeya_utility/drupal.shomeya_utility.toolbar',
+      ],
+    ],
+    'tray' => [
+      '#heading' => t('Build meta data'),
+      'info' => [
+        '#theme' => 'item_list',
+        '#items' => [
+          [
+            '#markup' => $commit_info,
+            '#wrapper_attributes' => [
+              'class' => ['shomeya-utility-toolbar-commit-data', 'shomeya-utility-toolbar-text']
+            ],
+          ],
+          [
+            '#markup' => $build_info,
+            '#wrapper_attributes' => [
+              'class' => ['shomeya-utility-toolbar-build-data', 'shomeya-utility-toolbar-text']
+            ],
+          ],
+        ],
+        '#attributes' => [
+          'class' => ['toolbar-menu'],
+        ],
+      ],
+    ],
+    '#weight' => 20,
+  ];
+
+  return $items;
+}

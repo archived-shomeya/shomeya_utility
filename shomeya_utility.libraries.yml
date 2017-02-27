@@ -1,0 +1,21 @@
+drupal.shomeya_utility.environment_icons:
+  version: 8.x-1.x
+  css:
+    theme:
+      css/shomeya_utility.icons.theme.css: {}
+
+drupal.shomeya_utility.toolbar:
+  version: 8.x-1.x
+  css:
+    theme:
+      css/shomeya_utility.theme.css: {}
+
+drupal.shomeya_utility.time_ago:
+  version: 8.x-1.x
+  js:
+    js/jquery.timeago.js: {}
+    js/time.js: {}
+  dependencies:
+      - core/jquery
+      - core/drupal
+
