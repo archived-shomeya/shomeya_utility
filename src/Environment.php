@@ -42,9 +42,11 @@ class Environment {
     'none' => self::WARN,
     'local' => self::ERROR,
     'dev' => self::ERROR,
+    'development' => self::ERROR,
     'stage' => self::ERROR,
     'staging' => self::ERROR,
-    'prod' => self::OK
+    'prod' => self::OK,
+    'production' => self::OK,
   ];
 
   /**
