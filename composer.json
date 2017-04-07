@@ -1,6 +1,23 @@
 {
     "name": "shomeya/shomeya_utility",
-    "description": "Shomeya utility tools",
     "type": "drupal-module",
-    "license": "GPL 2.0+"
+    "description": "Shomeya utility tools for Drupal",
+    "keywords": [
+        "drupal",
+        "drupal module",
+        "utility",
+        "development"
+    ],
+    "homepage": "https://github.com/shomeya/shomeya_utility",
+    "license": "GPL 2.0+",
+    "authors": [
+        {
+            "name": "Michael Prasuhn",
+            "email": "mike@mikeyp.net",
+            "homepage": "https://mikeyp.net"
+        }
+    ],
+    "require": {
+
+    }
 }
